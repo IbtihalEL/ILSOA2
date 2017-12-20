@@ -20,7 +20,7 @@ import javax.ws.rs.core.Response;
 public class DataServiceController {
 
 	  @RequestMapping(value = "/dataservice", method = RequestMethod.GET)
-	  public ModelAndView dataService(HttpServletRequest request, HttpServletResponse response,
+	  public ModelAndView showData(HttpServletRequest request, HttpServletResponse response,
 	  @ModelAttribute("login") Login login) {
 	    ModelAndView mav = null;
 	    mav = new ModelAndView("service");
