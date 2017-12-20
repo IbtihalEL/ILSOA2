@@ -2,10 +2,13 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
 import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+
 import model.Login;
 import model.User2;
 public class UserDaoImpl implements UserDao {
@@ -13,11 +16,13 @@ public class UserDaoImpl implements UserDao {
   DataSource datasource;
   @Autowired
   JdbcTemplate jdbcTemplate;
+  
   public void register(User2 user) {
-    String sql = "insert into users values(?,?,?,?,?,?,?)";
+    String sql = "insert into users values(?,?,?,?,?,?,?)";//
     jdbcTemplate.update(sql, new Object[] { user.getUsername(), user.getPassword(), user.getFirstname(),
     user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone() });
     }
+  
     public User2 validateUser(Login login) {
     String sql = "select * from users where username='" + login.getUsername() + "' and password='" + login.getPassword()
     + "'";
@@ -26,6 +31,7 @@ public class UserDaoImpl implements UserDao {
     }
 	
   }
+
   class UserMapper implements RowMapper<User2> {
   public User2 mapRow(ResultSet rs, int arg1) throws SQLException {
     User2 user = new User2();

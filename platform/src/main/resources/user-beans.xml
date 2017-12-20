@@ -8,9 +8,14 @@
         <property name="dataSource" ref="datasource" />
     </bean>
     <bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/myusers" />
-        <property name="username" value="root" />
-        <property name="password" value="" />
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://baasu.db.elephantsql.com:5432/kyzksfba" />
+        <property name="username" value="kyzksfba" />
+        <property name="password" value="eOpz1rPDBSMo7fICNIu6Otj47Rc7rKdd" /> 
+        <property name="connectionProperties">
+            <props>
+                <prop key="socketTimeout">10</prop>
+            </props>
+        </property>
     </bean>
 </beans>
