@@ -18,7 +18,6 @@ import javax.ws.rs.core.Response;
 
 @Controller
 public class DataServiceController {
-
 	  @RequestMapping(value = "/dataservice", method = RequestMethod.GET)
 	  public ModelAndView showData(HttpServletRequest request, HttpServletResponse response,
 	  @ModelAttribute("login") Login login) {
