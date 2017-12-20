@@ -15,16 +15,16 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
+import org.json.JSONObject;
 
 @Controller
 public class DataServiceController {
 	  @RequestMapping(value = "/dataservice", method = RequestMethod.GET)
-	  public ModelAndView showData(HttpServletRequest request, HttpServletResponse response,
-	  @ModelAttribute("login") Login login) {
+	  public ModelAndView showData(HttpServletRequest request, HttpServletResponse response) {
 	    ModelAndView mav = null;
 	    mav = new ModelAndView("service");
 	    Client client = ClientBuilder.newClient();
-	    Response resp = client.target("http://localhost:8080/SimpleDataProvider/webapi/etudiants").request().get();
+	    Response resp = client.target("http://localhost:8080/SimpleDataProvider/webapi/dogs").request().get();
 	    mav.addObject("serviceResult", resp.readEntity(String.class));
 	    return mav;
 	  }
