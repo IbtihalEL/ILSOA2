@@ -2738,7 +2738,7 @@
 								</div>
 							</form>
 
-							<a href="dataservice">Data</a>
+							<a href="dataservice">Get data</a>
 						</div>
 					</section>
 
